@@ -1,0 +1,12 @@
+<input type ='number' ngModel #inputValue>
+<button (click)="onClickHandler(inputValue.value)">Search</button>
+
+<ng-content *ngIf="status then card else load"></ng-content>
+<!-- <p>Status of API state : {{status}}</p> -->
+<ng-template #card>
+    <app-todo-card [todo]="todo"></app-todo-card>
+</ng-template>
+
+<ng-template #load>
+    <app-spinner></app-spinner>
+</ng-template>

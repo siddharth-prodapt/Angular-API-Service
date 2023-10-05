@@ -1,0 +1,20 @@
+<p>add-todo-component works!</p>
+
+<div [hidden]="submit">
+
+</div>
+<form #itemForm = "ngForm" (ngSubmit)="onSubmitHandler(itemForm)">
+    <label for=" id">Id       : </label>
+    <input type="number" [(ngModel)]="id" name="id"/>
+    <p>Remove{{id}}</p>
+    <br />
+    <label for = "title">Title    : </label>
+    <input type="text" [(ngModel)] ="title"name = "title">
+    <br />
+    <label for = 'userId'>User ID  : </label>
+    <input type="number" [(ngModel)]="userId" name = "userId"/>
+    <br />
+    <label for="completed">Completed: </label>
+    <input type="checkbox" [(ngModel)]="completed" name = "completed"/>
+    <button type="submit">Submit</button>
+</form>

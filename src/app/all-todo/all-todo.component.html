@@ -1,0 +1,17 @@
+<p>all-todo works!</p>
+<p>{{todoList.userId}}</p>
+<!-- <p> {{todoList}} </p> -->
+
+<div style="display: flex; justify-content:space-around; flex-direction: row;border: 2px solid red; flex-wrap: wrap;">
+
+    <div *ngIf="status; else elseBlock">
+        <app-spinner></app-spinner>
+    </div>
+
+    <ng-template #elseBlock>
+        <app-todo-card *ngFor="let todo of todoList" [todo]="todo"></app-todo-card>
+    </ng-template>
+
+
+
+</div>
